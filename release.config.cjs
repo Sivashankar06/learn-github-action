@@ -5,6 +5,7 @@ const config = {
     plugins: [
         "@semantic-release/commit-analyzer",
         "@semantic-release/release-notes-generator",
+        "semantic-release-yarn",
         [
             "@semantic-release/github", {
                 failTitle: false,
@@ -19,7 +20,6 @@ const config = {
                     ":tada: ${JSON.stringify(issue)}\n"
             },
         ],
-        "semantic-release-yarn",
     ],
 };
 
