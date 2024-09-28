@@ -11,7 +11,6 @@ const config = {
                 ]
             },
         ],
-        "semantic-release-npm-github-publish"
     ],
 };
 
