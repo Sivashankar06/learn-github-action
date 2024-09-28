@@ -12,12 +12,7 @@ const config = {
                 labels: false,
                 releasedLabels: false,
                 successComment:
-                    ":tada: ${JSON.stringify(branch)}\n" + 
-                    ":tada: ${JSON.stringify(lastRelease)}\n" + 
-                    ":tada: ${JSON.stringify(nextRelease)}\n" + 
-                    ":tada: ${JSON.stringify(releases)}\n" +
-                    ":tada: ${JSON.stringify(commits)}\n" + 
-                    ":tada: ${JSON.stringify(issue)}\n"
+                    ":tada: ${JSON.stringify(branch)}\n"
             },
         ],
     ],
