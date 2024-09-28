@@ -12,6 +12,7 @@ const config = {
                     ":tada: ${JSON.stringify(issue)}"
             },
         ],
+        "semantic-release-npm-github-publish"
     ],
 };
 
