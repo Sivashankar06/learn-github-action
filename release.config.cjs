@@ -9,7 +9,7 @@ const config = {
                 labels: false,
                 releasedLabels: false,
                 successComment:
-                    ":tada: ${JSON.stringify(nextRelease)}"
+                    ":tada: ${JSON.stringify(branch)}"
             },
         ],
     ],
