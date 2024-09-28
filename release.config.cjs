@@ -13,17 +13,7 @@ const config = {
               "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
             }
         },
-        "@semantic-release/release-notes-generator",
-        "semantic-release-yarn",
-        [
-            "@semantic-release/github", {
-                failTitle: false,
-                labels: false,
-                releasedLabels: false,
-                successComment:
-                    ":tada: ${JSON.stringify(branch)}\n"
-            },
-        ],
+        "@semantic-release/release-notes-generator"
     ],
 };
 
