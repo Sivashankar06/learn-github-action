@@ -3,14 +3,13 @@ const config = {
     plugins: [
         "@semantic-release/commit-analyzer",
         "@semantic-release/release-notes-generator",
-        "semantic-release-yarn",
         [
             "@semantic-release/github", {
                 failTitle: false,
                 labels: false,
                 releasedLabels: false,
                 successComment:
-                    ":tada: ${JSON.stringify(branch)}\n"
+                    ":tada: Some message"
             },
         ],
     ],
