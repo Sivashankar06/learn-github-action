@@ -34,5 +34,8 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "semantic-release-npm-github-publish": "^1.5.5"
   }
 }
