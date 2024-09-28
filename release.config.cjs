@@ -1,7 +1,5 @@
 const config = {
     branches: ["main", { name: "next", prerelease: true }],
-    preset: "angular",
-    tagFormat: "v${version}",
     plugins: [
         "@semantic-release/commit-analyzer",
         "@semantic-release/release-notes-generator",
