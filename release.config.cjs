@@ -5,11 +5,10 @@ const config = {
         "@semantic-release/release-notes-generator",
         [
             "@semantic-release/github", {
-                failTitle: false,
-                labels: false,
-                releasedLabels: false,
-                successComment:
-                    ":tada: ${JSON.stringify(issue)}"
+                successComment: ":tada:",
+                assets: [
+                    { "path": "dist/index.js", "label": "JS distribution" }
+                ]
             },
         ],
         "semantic-release-npm-github-publish"
