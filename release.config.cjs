@@ -7,8 +7,9 @@ const config = {
                 "preset": "angular",
                 "releaseRules": [
                 { "type": "docs", "scope": "README", "release": "patch" },
-                { "type": "refactor", "release": "minor" },
-                { "type": "feat", "release": "major", "tag": "revert" }
+                { "type": "refactor", "release": "major" },
+                { "type": "revert", "release": "minor" },
+                { "type": "feat", "release": "patch" }
                 ]
             },
         ],  
