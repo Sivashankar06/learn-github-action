@@ -8,7 +8,7 @@ const config = {
                 "releaseRules": [
                 { "type": "docs", "scope": "README", "release": "patch" },
                 { "type": "refactor", "release": "minor" },
-                { "type": "revert", "release": "major", "tag": "revert" }
+                { "type": "feat", "release": "major", "tag": "revert" }
                 ]
             },
         ],  
