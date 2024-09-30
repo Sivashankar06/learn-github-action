@@ -21,15 +21,8 @@ jobs:
           node-version: "lts/*"
       - run: npm ci
       - run: npm run build
-      - name: Add PR Comment
-        uses: thollander/actions-comment-pull-request@9d67388b9a94966eb262e68d9a3b368497990b77
-        id: pr-comment
-        if: always()
-        with:
-          message: ${{ steps.parse-changes.outputs.prComment }}
-          comment_tag: execution
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+        run: npx semantic-release --dry-run --no-ci --branches $GITHUB_REF
