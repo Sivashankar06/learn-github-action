@@ -1,7 +1,7 @@
 name: Release
 
 on:
-  push:
+  pull_request:
     branches:
       - main
       - next
@@ -19,10 +19,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
-      - run: npm ci
-      - run: npm run build
-      - name: Release
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
+      - name: Dry Release
+        id: dry-release
+        run: |
+          OUTPUT="$(bash -c "unset GITHUB_ACTIONS && npx semantic-release --dry-run --no-ci --branches '${HEAD_REF}'")"
+          NEW_RELEASE_VERSION=$(echo "$OUTPUT" | grep -oP 'The next release version is \K(\d+\.\d+\.\d+)')
+          echo "new-release-version=$NEW_RELEASE_VERSION" >> "$GITHUB_OUTPUT"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release --dry-run --no-ci
+          HEAD_REF: ${{ github.head_ref }}
+      - name: Use the version
+        run: echo "The version is ${{ steps.dry-release.outputs.new-release-version }}"
