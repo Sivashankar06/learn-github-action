@@ -33,5 +33,5 @@ jobs:
         id: pr-comment
         if: always()
         with:
-          message: New version is ${{ steps.dry-release.outputs.new-release-version }}
+          message: New version available ${{ steps.dry-release.outputs.new-release-version }}
           comment_tag: execution
