@@ -38,7 +38,7 @@ jobs:
         id: pr-comment
         if: always()
         run: | 
-          const pr_number = github.context.payload.number
+          console.log("Pr number : ", github.context.payload.number)
         with:
           message: New version is ${{ steps.dry-release.outputs.new-release-version }}
           comment_tag: execution
