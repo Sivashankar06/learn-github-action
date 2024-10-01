@@ -33,5 +33,11 @@ jobs:
           HEAD_REF: ${{ github.head_ref }}
       - name: Use the version
         run: echo "The version is null"
+      - name: Print PR comment1
+        run: echo "The version is ${{ github.ref_name }}"
+      - name: Print PR comment2
+        run: echo "The version is ${{ github.ref }}"
+      - name: Print PR comment3
+        run: echo "The version is ${{ steps.dry-release.outputs.new-release-version }}"
       - name: Print PR comment
         run: echo "The version is ${{ github.head_ref }}"
