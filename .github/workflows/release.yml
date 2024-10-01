@@ -24,7 +24,14 @@ jobs:
         with:
           node-version: "lts/*"
       - name: Dry it
-        run: npx semantic-release --dry-run --no-ci
+        run:
+          OUTPUT="$(bash -c "unset GITHUB_ACTIONS && npx semantic-release --dry-run --no-ci")"
+          echo $OUTPUT
+          echo $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          HEAD_REF: ${{ github.head_ref }}
       - name: Dry Release
         id: dry-release
         run:  |
