@@ -32,6 +32,6 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           HEAD_REF: ${{ github.head_ref }}
       - name: Use the version
-        run: echo "The version is ${{ steps.dry-release.outputs.new-release-version }}"
+        run: echo "The version is ${{ GITHUB_REF }}"
       - name: Print PR comment
-        run: echo "The version is ${{ github.event.number }}"
+        run: echo "The version is ${{ github.head_ref }}"
