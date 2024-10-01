@@ -5,6 +5,8 @@ on:
     branches:
       - main
       - next
+  workflow_call:
+  pull-request:
 
 permissions:
   contents: write
@@ -41,9 +43,9 @@ jobs:
         run: echo "The version is ${{ github.event_name }}"
       - name: Add PR Comment
         uses: thollander/actions-comment-pull-request@9d67388b9a94966eb262e68d9a3b368497990b77
-        id: pr-comment
         if: always()
         with:
           comment_tag: execution
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           message: |
             ${{ steps.dry-release.outputs.new-release-version }}
