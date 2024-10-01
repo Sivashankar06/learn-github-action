@@ -38,5 +38,5 @@ jobs:
         id: pr-comment
         if: always()
         with:
-          message: The version updated to ${{ steps.dry-release.outputs.new-release-version }}
-          comment_tag: "execution"
+          message: |
+            The version updated to 2.2.1
