@@ -46,4 +46,4 @@ jobs:
         with:
           comment_tag: execution
           message: |
-            ${{ steps.parse-changes.outputs.prComment }}
+            ${{ steps.dry-release.outputs.new-release-version }}
