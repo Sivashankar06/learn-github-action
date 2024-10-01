@@ -22,7 +22,7 @@ jobs:
           node-version: "lts/*"
       - name: Dry Release
         id: dry-release
-        run: |
+        run:  |
           OUTPUT="$(bash -c "unset GITHUB_ACTIONS && npx semantic-release --dry-run --no-ci")"
           NEW_RELEASE_VERSION=$(echo "$OUTPUT" | grep -oP 'The next release version is \K(\d+\.\d+\.\d+)')
           echo "new-release-version=$NEW_RELEASE_VERSION" >> "$GITHUB_OUTPUT"
