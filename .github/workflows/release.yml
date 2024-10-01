@@ -23,6 +23,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
+      - name: Dry it
+        run: npx semantic-release --dry-run --no-ci
       - name: Dry Release
         id: dry-release
         run:  |
