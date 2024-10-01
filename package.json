@@ -7,10 +7,6 @@
     "build": "echo \"Testing\"",
     "semantic": "semantic-release"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Sivashankar06/learn-github-action.git"
-  },
   "author": "",
   "license": "ISC",
   "bugs": {
