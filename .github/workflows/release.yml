@@ -20,9 +20,9 @@ jobs:
       - name: Dry Release
         id: dry-release
         run: |
-          VERSION_SPACES=$(npx semantic-release --dryRun | grep -oP 'Published release \K.*? ')
-          VERSION="${VERSION_SPACES// /}" # Remove spaces
-          echo $VERSION
+          OUTPUT="$(bash -c "unset GITHUB_ACTIONS && npx semantic-release --dry-run --no-ci")"
+          NEW_RELEASE_VERSION=$(echo "$OUTPUT" | grep -oP 'The next release version is \K(\d+\.\d+\.\d+)')
+          echo "new-release-version=$NEW_RELEASE_VERSION" >> "$GITHUB_OUTPUT"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HEAD_REF: ${{ github.head_ref }}
@@ -33,5 +33,5 @@ jobs:
         id: pr-comment
         if: always()
         with:
-          message: New version available ${{ VERSION }}
+          message: New version available ${{ steps.dry-release.outputs.new-release-version }}
           comment_tag: execution
