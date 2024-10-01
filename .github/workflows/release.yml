@@ -39,4 +39,4 @@ jobs:
         if: always()
         with:
           message: The version updated to ${{ steps.dry-release.outputs.new-release-version }}
-          comment_tag: execution
+          comment_tag: "execution"
