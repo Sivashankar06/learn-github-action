@@ -1,5 +1,5 @@
 const config = {
-    branches: ["main", { name: "next", prerelease: true }],
+    branches: ["main", "dev-prcomment", { name: "next", prerelease: true }],
 };
 
 module.exports = config;
