@@ -19,7 +19,7 @@ jobs:
           node-version: "lts/*"
       - name: Dry Release
         id: dry-release
-        run:
+        run: |
           VERSION_SPACES=$(npx semantic-release --dryRun | grep -oP 'Published release \K.*? ')
           VERSION="${VERSION_SPACES// /}" # Remove spaces
           echo $VERSION
