@@ -38,9 +38,3 @@ jobs:
         run: echo "The version is ${{ github.ref }}"
       - name: Print PR comment3
         run: echo "The version is ${{ steps.dry-release.outputs.new-release-version }}"
-      - name: Add PR Comment
-        uses: thollander/actions-comment-pull-request@9d67388b9a94966eb262e68d9a3b368497990b77
-        if: always()
-        with:
-          comment_tag: execution
-          message: "The version is ${{ steps.dry-release.outputs.new-release-version }}"
