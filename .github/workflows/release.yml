@@ -34,4 +34,4 @@ jobs:
       - name: Use the version
         run: echo "The version is ${{ steps.dry-release.outputs.new-release-version }}"
       - name: Print PR comment
-        run: echo "The version is ${{ github.event.pull_request.number }}"
+        run: echo "The version is ${{ github.event.number }}"
