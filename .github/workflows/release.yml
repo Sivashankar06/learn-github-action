@@ -40,4 +40,4 @@ jobs:
       - name: Print PR comment3
         run: echo "The version is ${{ steps.dry-release.outputs.new-release-version }}"
       - name: Print PR comment
-        run: echo "The version is ${{ github.head_ref }}"
+        run: echo "The version is ${{ github.event_name }}"
