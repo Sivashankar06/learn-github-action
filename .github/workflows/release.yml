@@ -13,11 +13,12 @@ jobs:
     steps:
       - name: 'Checkout repository'
         uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
         with:
           fetch-depth: 0
           ref: ${{ github.head_ref }}
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
           node-version: "lts/*"
       - name: Dry Release
         id: dry-release
