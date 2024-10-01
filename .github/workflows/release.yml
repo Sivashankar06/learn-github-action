@@ -40,4 +40,4 @@ jobs:
         with:
           message: New version is ${{ steps.dry-release.outputs.new-release-version }}
           comment_tag: execution
-          pr_number: context.payload.number
+          pr_number: github.context.payload.number
