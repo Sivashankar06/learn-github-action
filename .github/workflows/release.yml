@@ -26,7 +26,7 @@ jobs:
       - name: Dry Release
         id: dry-release
         run:  |
-          npx semantic-release --dry-run --no-ci --branches '${HEAD_REF}'
+          OUTPUT="$(bash -c "unset GITHUB_ACTIONS && npx semantic-release --dry-run --no-ci")"
           echo "new-release-version=0.0.6" >> "$GITHUB_OUTPUT"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
