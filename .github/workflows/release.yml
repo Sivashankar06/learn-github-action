@@ -37,7 +37,9 @@ jobs:
         uses: thollander/actions-comment-pull-request@9d67388b9a94966eb262e68d9a3b368497990b77
         id: pr-comment
         if: always()
+        run: | 
+          const pr_number = github.context.payload.number
         with:
           message: New version is ${{ steps.dry-release.outputs.new-release-version }}
           comment_tag: execution
-          pr_number: ${{ github.context.payload.number }}
+          pr_number: pr_number
