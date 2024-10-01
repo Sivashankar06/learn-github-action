@@ -16,7 +16,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
       - name: Dry Release
         id: dry-release
         run: |
