@@ -5,6 +5,10 @@ on:
     branches:
       - main
       - next
+  pull-request:
+    branches:
+      - main
+      - next
 
 permissions:
   contents: write
