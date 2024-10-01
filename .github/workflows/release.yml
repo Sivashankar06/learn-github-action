@@ -34,9 +34,10 @@ jobs:
       - name: Use the version
         run: echo "The version is ${{ steps.dry-release.outputs.new-release-version }}"
       - name: Add PR Comment
-        uses: thollander/actions-comment-pull-request@v2
+        uses: thollander/actions-comment-pull-request@9d67388b9a94966eb262e68d9a3b368497990b77
         id: pr-comment
         if: always()
         with:
-          message: |
-            The version updated to 2.2.1
+          message: The version updated to ${{ steps.dry-release.outputs.new-release-version }}
+          comment_tag: execution
+          pr_number: 24
