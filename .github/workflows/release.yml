@@ -42,5 +42,4 @@ jobs:
         if: always()
         with:
           comment_tag: execution
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           message: "The version is ${{ steps.dry-release.outputs.new-release-version }}"
