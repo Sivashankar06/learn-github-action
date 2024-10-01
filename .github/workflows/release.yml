@@ -6,7 +6,7 @@ on:
       - main
       - next
   workflow_call:
-  pull-request:
+  pull-requests:
 
 permissions:
   contents: write
