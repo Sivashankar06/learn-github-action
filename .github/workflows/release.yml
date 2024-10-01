@@ -23,7 +23,7 @@ jobs:
       - name: Dry Release
         id: dry-release
         run:  |
-          npx semantic-release --dry-run --no-ci
+          npx semantic-release --dry-run --no-ci --branches '${HEAD_REF}'
           echo "new-release-version=0.0.6" >> "$GITHUB_OUTPUT"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
