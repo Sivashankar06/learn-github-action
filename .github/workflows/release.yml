@@ -1,11 +1,7 @@
 name: Release
 
 on:
-  pull_request:
-    branches:
-      - main
-      - next
-      - next1
+  workflow_call:
 
 permissions:
   contents: write
